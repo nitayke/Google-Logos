@@ -49,27 +49,31 @@ function f()
         }
     }
 
-    for (var i = 0; i < side_icons.length; i++) {
-        var cond = false;
-
-        for(key in dict)
-        {
-            console.log(key);
-            for(var k =0; k<dict[key]["curr"].length;k++)
+    for (var c = 0; c < 2; c++)
+    {
+        for (var i = 0; i < side_icons.length; i++) {
+            var cond = false;
+    
+            for(key in dict)
             {
-                console.log(side_icons[i].style.backgroundImage,dict[key]["curr"][k])
-                if(side_icons[i].style.backgroundImage.includes(dict[key]["curr"][k]))
+                console.log(key);
+                for(var k =0; k<dict[key]["curr"].length;k++)
                 {
-                    console.log("here i am");
-                    side_icons[i].style.backgroundImage = side_icons[i].style.backgroundImage.replace(dict[key]["curr"][k],dict[key]["old"][0]);
-                    cond = true;
+                    console.log(side_icons[i].style.backgroundImage,dict[key]["curr"][k])
+                    if(side_icons[i].style.backgroundImage.includes(dict[key]["curr"][k]))
+                    {
+                        console.log("here i am");
+                        side_icons[i].style.backgroundImage = side_icons[i].style.backgroundImage.replace(dict[key]["curr"][k],dict[key]["old"][0]);
+                        cond = true;
+                    }
+                    if(cond)
+                        break;
+    
                 }
                 if(cond)
                     break;
-
             }
-            if(cond)
-                break;
         }
+        side_icons = document.getElementsByClassName("Yb-Il-d-c-j");
     }
 }
