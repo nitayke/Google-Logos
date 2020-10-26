@@ -31,7 +31,8 @@ function f()
     var images = document.getElementsByTagName('img');
     var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),document.getElementsByClassName("Yb-Il-d-c-j"),document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
 
-    for (var i = 0; i < images.length; i++) {
+    for (var i = 0; i < images.length; i++) 
+    {
         var cond = false;
         for(key in dict)
         {
@@ -49,28 +50,29 @@ function f()
                 break;
         }
     }
-for(var l = 0;k<side_icons.length;k++)
-    for (var i = 0; i < side_icons[l].length; i++) {
-        var cond = false;
 
-        for(key in dict)
+    for(var l = 0;k<side_icons.length;k++)
+        for (var i = 0; i < side_icons[l].length; i++)
         {
-            console.log(key);
-            for(var k =0; k<dict[key]["curr"].length;k++)
+            var cond = false;
+
+            for(key in dict)
             {
-                console.log(side_icons[l][i].style.backgroundImage,dict[key]["curr"][k])
-                if(side_icons[l][i].style.backgroundImage.includes(dict[key]["curr"][k]))
+                console.log(key);
+                for(var k =0; k<dict[key]["curr"].length;k++)
                 {
-                    console.log("here i am");
-                    side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(dict[key]["curr"][k],dict[key]["old"][0]);
-                    cond = true;
+                    console.log(side_icons[l][i].style.backgroundImage,dict[key]["curr"][k])
+                    if(side_icons[l][i].style.backgroundImage.includes(dict[key]["curr"][k]))
+                    {
+                        console.log("here i am");
+                        side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(dict[key]["curr"][k],dict[key]["old"][0]);
+                        cond = true;
+                    }
+                    if(cond)
+                        break;
                 }
                 if(cond)
                     break;
-
             }
-            if(cond)
-                break;
         }
-    }
 }
