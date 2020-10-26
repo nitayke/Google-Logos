@@ -29,7 +29,7 @@ function f()
 
     }
     var images = document.getElementsByTagName('img');
-    var side_icons = document.getElementsByClassName("aT5-aOt-I-JX-Jw");
+    var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),document.getElementsByClassName("Yb-Il-d-c-j"),document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
 
     for (var i = 0; i < images.length; i++) {
         var cond = false;
@@ -49,32 +49,28 @@ function f()
                 break;
         }
     }
+for(var l = 0;k<side_icons.length;k++)
+    for (var i = 0; i < side_icons[l].length; i++) {
+        var cond = false;
 
-    for (var c = 0; c < 2; c++)
-    {
-        for (var i = 0; i < side_icons.length; i++) {
-            var cond = false;
-    
-            for(key in dict)
+        for(key in dict)
+        {
+            console.log(key);
+            for(var k =0; k<dict[key]["curr"].length;k++)
             {
-                console.log(key);
-                for(var k =0; k<dict[key]["curr"].length;k++)
+                console.log(side_icons[l][i].style.backgroundImage,dict[key]["curr"][k])
+                if(side_icons[l][i].style.backgroundImage.includes(dict[key]["curr"][k]))
                 {
-                    console.log(side_icons[i].style.backgroundImage,dict[key]["curr"][k])
-                    if(side_icons[i].style.backgroundImage.includes(dict[key]["curr"][k]))
-                    {
-                        console.log("here i am");
-                        side_icons[i].style.backgroundImage = side_icons[i].style.backgroundImage.replace(dict[key]["curr"][k],dict[key]["old"][0]);
-                        cond = true;
-                    }
-                    if(cond)
-                        break;
-    
+                    console.log("here i am");
+                    side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(dict[key]["curr"][k],dict[key]["old"][0]);
+                    cond = true;
                 }
                 if(cond)
                     break;
+
             }
+            if(cond)
+                break;
         }
-        side_icons = document.getElementsByClassName("Yb-Il-d-c-j");
     }
 }
