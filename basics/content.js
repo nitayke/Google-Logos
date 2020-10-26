@@ -1,6 +1,10 @@
 
 console.log("hey everybody!");
 
+myVar = setTimeout(f, 4500);
+
+function f()
+{
 var dict = {
     "Gmail":{"curr" : ["https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_server_1x.png",
 	"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
@@ -58,12 +62,14 @@ for (var i = 0; i < images.length; i++) {
             break;
     }
 }
-console.log("1")
+console.log(side_icons.length)
 for (var i = 0; i < side_icons.length; i++) {
     var cond = false;
+    console.log(i);
     for(key in dict)
     {
-        console.log(key);
+
+        console.log("2");
 
         if(side_icons[i].style.backgroundImage === dict[key]["curr"][0])
         {
@@ -76,4 +82,5 @@ for (var i = 0; i < side_icons.length; i++) {
             break;
 
     }
+}
 }
