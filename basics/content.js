@@ -53,6 +53,7 @@ for (var i = 0; i < images.length; i++) {
 
     }
 }
+}
 
 console.log(side_icons.length)
 for (var i = 0; i < side_icons.length; i++) {
