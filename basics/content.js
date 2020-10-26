@@ -58,22 +58,22 @@ function f()
                     images[i].srcset = dict[key]["old"][0].concat(" 2x, ", dict[key]["old"][0], " 1x");
                     cond = true;
                 }
-                if(cond)
+                if (cond)
                     break;
             }
-            if(cond)
+            if (cond)
                 break;
         }
     }
-for(var l = 0;l<side_icons.length;l++)
+    for (var l = 0; l < side_icons.length; l++)
         for (var i = 0; i < side_icons[l].length; i++)
         {
             var cond = false;
 
-            for(key in dict)
+            for (key in dict)
             {
                 console.log(key);
-                for(var k =0; k<dict[key]["curr"].length;k++)
+                for (var k = 0; k < dict[key]["curr"].length; k++)
                 {
                     console.log(side_icons[l][i].style.backgroundImage,dict[key]["curr"][k])
                     if(side_icons[l][i].style.backgroundImage.includes(dict[key]["curr"][k]))
@@ -82,10 +82,10 @@ for(var l = 0;l<side_icons.length;l++)
                         side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(dict[key]["curr"][k],dict[key]["old"][0]);
                         cond = true;
                     }
-                    if(cond)
+                    if (cond)
                         break;
                 }
-                if(cond)
+                if (cond)
                     break;
             }
         }
