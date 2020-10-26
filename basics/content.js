@@ -2,19 +2,21 @@
 console.log("hey everybody!");
 
 var dict = {
-    "Gmail":{"curr" : ["https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_server_1x.png",
-	"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
-	"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png",
-	"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_2x_rtl_r2.png",
-	"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png",],
-     "old":["https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png"]},
-    
-	"Maps":{"curr" : ["https://www.gstatic.com/companion/icon_assets/maps_v2_2x.png",],
-     "old":[]},
-    
+    "Gmail":{"curr" : ["https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_server_1x.png", // 2-5 are the same for us
+		"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
+		"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png",
+		"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_2x_rtl_r2.png",
+		"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png"],
+	"old":["https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-2.png",
+		"https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png"]},
+	
 	"Calendar":{"curr" : ["url(\"https://www.gstatic.com/companion/icon_assets/fgdY29RxT2yHBfEODHlF70ZI3ytOaPoX/calendar_v3_2x.png\")"], 
     "old":["url(\"https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_31_v2.png\")"]},
+	
+	"Drive":{"curr": [], "old":[]},
     
+	"Docs":{"curr": [], "old":[]},
+	
 	"Meet":{"curr": [], "old":[]}
 }
 
@@ -29,7 +31,6 @@ for (var i = 0; i < images.length; i++) {
 
         if(images[i].src in dict[key]["curr"])
         {
-            console.log("found" + i);
             images[i].src = dict[key]["old"][0];
             cond = true;
         }
@@ -40,25 +41,25 @@ for (var i = 0; i < images.length; i++) {
 }
 
 for (var i = 0; i < images.length; i++) {
-    var cond = false;
     for(key in dict)
     {
+		var cond = false;
         console.log(key);
 
 		for (curr_url in dict[key]["curr"])
 		{
-			if (images[i].srcset.includes(curr_url))
+			if (images[i].src === curr_url)
 			{
-				console.log("found" + i);
+				console.log(images[i].srcset + " " + dict[key]["curr"] + " " + key);
 				images[i].srcset = dict[key]["old"][0].concat(" 2x, ", dict[key]["old"][0], " 1x");
 				cond = true;
 			}
+			if(cond)
+				break;
         }
-        if(cond)
-            break;
     }
 }
-console.log("1")
+
 for (var i = 0; i < side_icons.length; i++) {
     var cond = false;
     for(key in dict)
