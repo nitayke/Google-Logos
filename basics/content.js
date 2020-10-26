@@ -24,7 +24,7 @@ var dict = {
     "Meet":{"curr": ["https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png",""], "old":["https://cdn.freelogovectors.net/wp-content/uploads/2020/07/google-meet-logo.png"]},
     "Drive" : {"curr" : ["https://ssl.gstatic.com/images/branding/product/2x/hh_drive_96dp.png","https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png"],"old" : ["https://www.pepperi.com/wp-content/uploads/2016/10/google-drive.png",]}
 
-
+}
 var images = document.getElementsByTagName('img');
 var side_icons = document.getElementsByClassName("aT5-aOt-I-JX-Jw");
 
