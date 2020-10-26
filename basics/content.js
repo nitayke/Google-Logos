@@ -19,7 +19,10 @@ var dict = {
 	"Calendar":{"curr" : ["url(\"https://www.gstatic.com/companion/icon_assets/fgdY29RxT2yHBfEODHlF70ZI3ytOaPoX/calendar_v3_2x.png\")"], 
     "old":["url(\"https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_31_v2.png\")"]},
     
-	"Meet":{"curr": [], "old":[]}
+    "Meet":{"curr": [], "old":[]},
+
+    
+    
 }
 
 var images = document.getElementsByTagName('img');
@@ -37,31 +40,20 @@ for (var i = 0; i < images.length; i++) {
             images[i].src = dict[key]["old"][0];
             cond = true;
         }
-        if(cond)
-            break;
-
-    }
-}
-
-for (var i = 0; i < images.length; i++) {
-    var cond = false;
-    for(key in dict)
-    {
-        console.log(key);
-
-		for (curr_url in dict[key]["curr"])
+        for (curr_url in dict[key]["curr"])
 		{
 			if (images[i].srcset.includes(curr_url))
 			{
-				console.log("found" + i);
+				console.log("found srcset" + i);
 				images[i].srcset = dict[key]["old"][0].concat(" 2x, ", dict[key]["old"][0], " 1x");
 				cond = true;
 			}
-        }
         if(cond)
             break;
+
     }
 }
+
 console.log(side_icons.length)
 for (var i = 0; i < side_icons.length; i++) {
     var cond = false;
