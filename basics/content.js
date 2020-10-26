@@ -44,22 +44,32 @@ function f()
                 if(cond)
                     break;
             }
+            if(cond)
+                break;
         }
     }
 
     for (var i = 0; i < side_icons.length; i++) {
         var cond = false;
+
         for(key in dict)
         {
-            if(side_icons[i].style.backgroundImage === dict[key]["curr"][0])
+            console.log(key);
+            for(var k =0; k<dict[key]["curr"].length;k++)
             {
-                console.log(i, key, curr_url, side_icons[i].style, dict[key]["curr"]);
-                side_icons[i].style.backgroundImage = dict[key]["old"][0];
-                cond = true;
+                console.log(side_icons[i].style.backgroundImage,dict[key]["curr"][k])
+                if(side_icons[i].style.backgroundImage.includes(dict[key]["curr"][k]))
+                {
+                    console.log("here i am");
+                    side_icons[i].style.backgroundImage = side_icons[i].style.backgroundImage.replace(dict[key]["curr"][k],dict[key]["old"][0]);
+                    cond = true;
+                }
+                if(cond)
+                    break;
+
             }
             if(cond)
                 break;
-
         }
     }
 }
