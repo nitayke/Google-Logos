@@ -43,6 +43,23 @@ function f()
             "https://www.pepperi.com/wp-content/uploads/2016/10/google-drive.png",]}
 
     }
+
+    var new_dict = {
+        // big gmail
+        "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_r2.png":
+        "https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-2.png",
+        // small gmail
+        "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico":
+        "https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png",
+        // small drive
+        "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png":
+        "", // TODO: find drive icon (rimon)
+        // small calendar
+        "https://www.gstatic.com/companion/icon_assets/fgdY29RxT2yHBfEODHlF70ZI3ytOaPoX/calendar_v3_2x.png":
+        "https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_" + date.getDate() + "_v2.png"
+
+
+    }
     var images = document.getElementsByTagName('img');
     var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),document.getElementsByClassName("Yb-Il-d-c-j"),document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
 
