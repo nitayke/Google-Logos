@@ -49,7 +49,7 @@ function f()
                 break;
         }
     }
-for(var l = 0;k<side_icons.length;k++)
+for(var l = 0;l<side_icons.length;l++)
     for (var i = 0; i < side_icons[l].length; i++) {
         var cond = false;
 
