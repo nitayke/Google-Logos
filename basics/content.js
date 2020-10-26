@@ -6,16 +6,6 @@ myVar = setTimeout(f, 4500);
 function f()
 {
 var dict = {
-<<<<<<< HEAD
-    "Gmail":{"curr" : ["https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_server_1x.png", // 2-5 are the same for us
-		"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
-		"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png",
-		"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_2x_rtl_r2.png",
-		"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png"],
-	"old":["https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-2.png",
-		"https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png"]},
-	
-=======
     "Gmail":{"curr" : ["https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_server_1x.png",
 	"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
 	"https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png",
@@ -26,25 +16,14 @@ var dict = {
 	"Maps":{"curr" : ["https://www.gstatic.com/companion/icon_assets/maps_v2_2x.png",],
      "old":["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Google_Maps_icon.svg/1200px-Google_Maps_icon.svg.png"]},
     
->>>>>>> 5492f93570377f6fbc10b4e52cc9e72032b1194a
 	"Calendar":{"curr" : ["url(\"https://www.gstatic.com/companion/icon_assets/fgdY29RxT2yHBfEODHlF70ZI3ytOaPoX/calendar_v3_2x.png\")"], 
     "old":["url(\"https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_31_v2.png\")"]},
 	
-	"Drive":{"curr": [], "old":[]},
     
-<<<<<<< HEAD
-	"Docs":{"curr": [], "old":[]},
-	
-	"Meet":{"curr": [], "old":[]}
-=======
+
     "Meet":{"curr": ["https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png",""], "old":["https://cdn.freelogovectors.net/wp-content/uploads/2020/07/google-meet-logo.png"]},
     "Drive" : {"curr" : ["https://ssl.gstatic.com/images/branding/product/2x/hh_drive_96dp.png","https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png"],"old" : ["https://www.pepperi.com/wp-content/uploads/2016/10/google-drive.png",]}
 
-
-    
-    
->>>>>>> 5492f93570377f6fbc10b4e52cc9e72032b1194a
-}
 
 var images = document.getElementsByTagName('img');
 var side_icons = document.getElementsByClassName("aT5-aOt-I-JX-Jw");
@@ -60,39 +39,11 @@ for (var i = 0; i < images.length; i++) {
             images[i].src = dict[key]["old"][0];
             cond = true;
         }
-<<<<<<< HEAD
-        if(cond)
-            break;
-
-    }
-}
-
-for (var i = 0; i < images.length; i++) {
-    for(key in dict)
-    {
-		var cond = false;
-        console.log(key);
-
-		for (curr_url in dict[key]["curr"])
-=======
         
         for (curr_url in dict[key]["curr"])
->>>>>>> 5492f93570377f6fbc10b4e52cc9e72032b1194a
 		{
 			if (images[i].src === curr_url)
 			{
-<<<<<<< HEAD
-				console.log(images[i].srcset + " " + dict[key]["curr"] + " " + key);
-				images[i].srcset = dict[key]["old"][0].concat(" 2x, ", dict[key]["old"][0], " 1x");
-				cond = true;
-			}
-			if(cond)
-				break;
-        }
-    }
-}
-
-=======
 				console.log("found srcset" + i);
 				images[i].srcset = dict[key]["old"][0].concat(" 2x, ", dict[key]["old"][0], " 1x");
 				cond = true;
@@ -105,7 +56,6 @@ for (var i = 0; i < images.length; i++) {
 }
 
 console.log(side_icons.length)
->>>>>>> 5492f93570377f6fbc10b4e52cc9e72032b1194a
 for (var i = 0; i < side_icons.length; i++) {
     var cond = false;
     console.log(i);
