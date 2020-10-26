@@ -1,0 +1,16 @@
+{
+    "manifest_version":1,
+    "name" : "google logos",
+    "version" : "1.0" ,
+    "content_scripts" : [
+        {
+            "matches" : [
+                "<all_urls>"
+            ],
+            "js" : ["content.js"]
+        
+        }
+    ]
+
+
+}
