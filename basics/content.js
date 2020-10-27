@@ -23,7 +23,7 @@ function f()
         "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png":
         "https://ssl.gstatic.com/images/branding/product/1x/drive_48dp.png",
         //small drive icon
-        "http://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png":
+        "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png":
         "https://ssl.gstatic.com/images/branding/product/1x/drive_32dp.png", 
         // small calendar
         "https://www.gstatic.com/companion/icon_assets/fgdY29RxT2yHBfEODHlF70ZI3ytOaPoX/calendar_v3_2x.png":
@@ -39,6 +39,7 @@ function f()
     var images = document.getElementsByTagName('img');
     var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),document.getElementsByClassName("Yb-Il-d-c-j"),document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
 
+
     for (var i = 0; i < tabs.length; i++) 
     {
         if(tabs[i].href in new_dict)
@@ -46,8 +47,8 @@ function f()
             console.log("found - tabs");
             tabs[i].href = new_dict[tabs[i].href];
         }
-        
     }
+    
     for (var i = 0; i < images.length; i++) 
     {
         if(images[i].src in new_dict)
