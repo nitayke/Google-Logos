@@ -48,6 +48,9 @@ function f()
         // big gmail
         "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_r2.png":
         "https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-2.png",
+        
+        "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png":
+        "https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-2.png",
         // small gmail
         "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico":
         "https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png",
@@ -72,22 +75,12 @@ function f()
 
     for (var i = 0; i < images.length; i++) 
     {
-        var cond = false;
-        for(key in dict)
+        if(images[i].src in new_dict)
         {
-            for (curr_url in dict[key]["curr"])
-            {
-                if (images[i].src === dict[key]["curr"][curr_url])
-                {
-                    images[i].srcset = dict[key]["old"][0].concat(" 2x, ", dict[key]["old"][0], " 1x");
-                    cond = true;
-                }
-                if (cond)
-                    break;
-            }
-            if (cond)
-                break;
+            console.log("found");
+            images[i].srcset = new_dict[images[i].src].concat(" 2x, ", new_dict[images[i].src], " 1x");
         }
+        
     }
     for (var l = 0; l < side_icons.length; l++)
         for (var i = 0; i < side_icons[l].length; i++)
