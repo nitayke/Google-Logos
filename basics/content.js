@@ -9,7 +9,7 @@ function f()
     var new_dict = {
         // big gmail
         "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_r2.png":
-        "https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-2.png",
+        "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/big_gmail.png",
 
         "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png":
         "https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-2.png",
