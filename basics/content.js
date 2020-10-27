@@ -51,14 +51,21 @@ function f()
         // small gmail
         "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico":
         "https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png",
+        // small gmail extension icon
+        "chrome://extension-icon/pjkljhegncpnkpknbcohdijeoejaedia/128/1":
+        "https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png",
         // small drive
         "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png":
-        "", // TODO: find drive icon (rimon)
+        "https://migrants-refugees.va/wp-content/uploads/2017/04/Google-Drive-icon.png",
         // small calendar
         "https://www.gstatic.com/companion/icon_assets/fgdY29RxT2yHBfEODHlF70ZI3ytOaPoX/calendar_v3_2x.png":
-        "https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_" + date.getDate() + "_v2.png"
-
-
+        "https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_" + date.getDate() + "_v2.png",
+        // small drive extension icon
+        "chrome://extension-icon/apdfllckaahabafndbhieahigkjlhalf/128/1":
+        "https://migrants-refugees.va/wp-content/uploads/2017/04/Google-Drive-icon.png",
+        // meet "Google"
+        "https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png":
+        ""
     }
     var images = document.getElementsByTagName('img');
     var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),document.getElementsByClassName("Yb-Il-d-c-j"),document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
