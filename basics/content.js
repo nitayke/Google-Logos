@@ -59,7 +59,10 @@ function f()
         "https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png",
         // small drive
         "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png":
-        "https://migrants-refugees.va/wp-content/uploads/2017/04/Google-Drive-icon.png",
+        "https://ssl.gstatic.com/images/branding/product/1x/drive_48dp.png",
+        //small drive icon
+        "http://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png":
+        "https://ssl.gstatic.com/images/branding/product/1x/drive_32dp.png", 
         // small calendar
         "https://www.gstatic.com/companion/icon_assets/fgdY29RxT2yHBfEODHlF70ZI3ytOaPoX/calendar_v3_2x.png":
         "https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_" + date.getDate() + "_v2.png",
@@ -78,7 +81,7 @@ function f()
     {
         if(tabs[i].href in new_dict)
         {
-            console.log("found");
+            console.log("found - tabs");
             tabs[i].href = new_dict[tabs[i].href];
         }
         
