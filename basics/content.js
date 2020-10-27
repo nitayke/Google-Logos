@@ -65,7 +65,7 @@ function f()
         "https://migrants-refugees.va/wp-content/uploads/2017/04/Google-Drive-icon.png",
         // meet "Google"
         "https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png":
-        ""
+        "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet_google.png"
     }
     var images = document.getElementsByTagName('img');
     var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),document.getElementsByClassName("Yb-Il-d-c-j"),document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
