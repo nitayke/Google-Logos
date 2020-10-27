@@ -48,7 +48,7 @@ function f()
         // big gmail
         "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_r2.png":
         "https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-2.png",
-        
+
         "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png":
         "https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-2.png",
         // small gmail
@@ -82,28 +82,17 @@ function f()
         }
         
     }
+    console.log("second for")
     for (var l = 0; l < side_icons.length; l++)
+    {
         for (var i = 0; i < side_icons[l].length; i++)
         {
-            var cond = false;
-
-            for (key in dict)
+            var src = side_icons[l][i].style.backgroundImage.substring(5,side_icons[l][i].style.backgroundImage.length -2);
+            if(src in new_dict)
             {
-                console.log(key);
-                for (var k = 0; k < dict[key]["curr"].length; k++)
-                {
-                    console.log(side_icons[l][i].style.backgroundImage,dict[key]["curr"][k])
-                    if(side_icons[l][i].style.backgroundImage.includes(dict[key]["curr"][k]))
-                    {
-                        console.log("here i am");
-                        side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(dict[key]["curr"][k],dict[key]["old"][0]);
-                        cond = true;
-                    }
-                    if (cond)
-                        break;
-                }
-                if (cond)
-                    break;
+                side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(src,new_dict[src]);
             }
+
         }
+    } 
 }
