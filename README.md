@@ -6,6 +6,6 @@ We don't like them, so we made a *chrome extension* that replaces them with the 
 
 ![](https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/all_logos.jpg)
 ## How To Use
-The Extension will be published soon at Chrome Web Store.
+The Extension will be published soon at Chrome Web Store.</br>
 Stay Tuned.</br>
 ## Examples
