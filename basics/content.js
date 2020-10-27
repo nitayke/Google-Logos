@@ -6,7 +6,7 @@ myVar = setTimeout(f, 4500);
 function f()
 {
     var date = new Date();
-    var new_dict = {
+    var dict = {
         // big gmail
         "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_r2.png":
         "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/big_gmail.png",
@@ -42,28 +42,28 @@ function f()
 
     for (var i = 0; i < tabs.length; i++) 
     {
-        if(tabs[i].href in new_dict)
+        if(tabs[i].href in dict)
         {
             console.log("found - tabs");
-            tabs[i].href = new_dict[tabs[i].href];
+            tabs[i].href = dict[tabs[i].href];
         }
     }
     
     for (var i = 0; i < images.length; i++) 
     {
-        if(images[i].src in new_dict)
+        if(images[i].src in dict)
         {
             console.log("found");
-            images[i].srcset = new_dict[images[i].src].concat(" 2x, ", new_dict[images[i].src], " 1x");
+            images[i].srcset = dict[images[i].src].concat(" 2x, ", dict[images[i].src], " 1x");
         }
         
     }
     for (var i = 0; i < images.length; i++) 
     {
-        if(images[i].src in new_dict)
+        if(images[i].src in dict)
         {
             console.log("found");
-            images[i].srcset = new_dict[images[i].src].concat(" 2x, ", new_dict[images[i].src], " 1x");
+            images[i].srcset = dict[images[i].src].concat(" 2x, ", dict[images[i].src], " 1x");
         }
         
     }
@@ -73,9 +73,9 @@ function f()
         for (var i = 0; i < side_icons[l].length; i++)
         {
             var src = side_icons[l][i].style.backgroundImage.substring(5,side_icons[l][i].style.backgroundImage.length -2);
-            if(src in new_dict)
+            if(src in dict)
             {
-                side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(src,new_dict[src]);
+                side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(src,dict[src]);
             }
 
         }
