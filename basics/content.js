@@ -32,9 +32,28 @@ function f()
         "https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png":
         "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet_google.png"
     }
+    var tabs = document.getElementsByTagName('link');
     var images = document.getElementsByTagName('img');
     var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),document.getElementsByClassName("Yb-Il-d-c-j"),document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
 
+    for (var i = 0; i < tabs.length; i++) 
+    {
+        if(tabs[i].href in new_dict)
+        {
+            console.log("found");
+            tabs[i].href = new_dict[tabs[i].href];
+        }
+        
+    }
+    for (var i = 0; i < images.length; i++) 
+    {
+        if(images[i].src in new_dict)
+        {
+            console.log("found");
+            images[i].srcset = new_dict[images[i].src].concat(" 2x, ", new_dict[images[i].src], " 1x");
+        }
+        
+    }
     for (var i = 0; i < images.length; i++) 
     {
         if(images[i].src in new_dict)
