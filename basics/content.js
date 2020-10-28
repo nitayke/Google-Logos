@@ -39,7 +39,10 @@ function f()
         "https://www.gstatic.com/images/branding/product/1x/meet_32dp.png",
 
         "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v1/web-32dp/logo_meet_2020q4_color_1x_web_32dp.png":
-        "https://www.gstatic.com/images/branding/product/1x/meet_32dp.png"
+        "https://www.gstatic.com/images/branding/product/1x/meet_32dp.png",
+        // "google meet"
+        "https://www.gstatic.com/meet/google_meet_primary_horizontal_2020q4_logo_be3f8c43950bd1e313525ada2ce0df44.svg":
+        "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet.png"
     }
     var tabs = document.getElementsByTagName('link');
     var images = document.getElementsByTagName('img');
