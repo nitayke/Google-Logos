@@ -51,10 +51,12 @@ function f()
 
     for (var i = 0; i < tabs.length; i++) 
     {
-        if(tabs[i].href in dict)
+        for (j in dict)
         {
-            console.log("found - tabs");
-            tabs[i].href = dict[tabs[i].href];
+            if (tabs[i].href.includes(j)) 
+            {
+                tabs[i].href = dict[tabs[i].href];
+            }
         }
     }
     
