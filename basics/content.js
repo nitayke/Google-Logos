@@ -33,7 +33,13 @@ function f()
         "https://migrants-refugees.va/wp-content/uploads/2017/04/Google-Drive-icon.png",
         // meet "Google"
         "https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png":
-        "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet_google.png"
+        "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet_google.png",
+        // meet icon
+        "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v1/web-36dp/logo_meet_2020q4_color_1x_web_36dp.png":
+        "https://www.gstatic.com/images/branding/product/1x/meet_32dp.png",
+
+        "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v1/web-32dp/logo_meet_2020q4_color_1x_web_32dp.png":
+        "https://www.gstatic.com/images/branding/product/1x/meet_32dp.png"
     }
     var tabs = document.getElementsByTagName('link');
     var images = document.getElementsByTagName('img');
