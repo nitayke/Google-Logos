@@ -35,7 +35,13 @@ function function_gmail(pre_link)
     if ("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png" === pre_link)
         return "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/gmail_rtl.png";
     let place = pre_link.search('dp');
-    let size = pre_link.substr(place - 2, 2);
+    //add - for loop for getting all size
+    let size = pre_link.substr(place - 2, 2);  
+    if(isNaN(size))
+    {
+        console.log("fuck you all");
+        size = "32";
+    }
     return "https://www.gstatic.com/images/branding/product/1x/gmail_" + size + "dp.png";
 };
 
