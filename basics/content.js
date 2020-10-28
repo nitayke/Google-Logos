@@ -29,7 +29,6 @@ function function_gmail(pre_link){
     let size = pre_link.substr(place - 2, 2);  
     if(isNaN(size))
     {
-        console.log("fuck you all");
         size = "32";
     }
     return "https://www.gstatic.com/images/branding/product/1x/gmail_" + size + "dp.png";
@@ -133,10 +132,10 @@ function f()
         for (var i = 0; i < side_icons[l].length; i++)
         {
             var src = side_icons[l][i].style.backgroundImage.substring(5,side_icons[l][i].style.backgroundImage.length -2);
-           
-            if(src.includes("gstatic"))
+            
+            if(!src.includes("gstatic"))
                 continue;
-    
+            
             for(site in list)
             {
                 console.log(list[site]);
