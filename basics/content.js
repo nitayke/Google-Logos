@@ -147,10 +147,11 @@ function f()
     
             for(site in list)
             {
+                console.log(list[site]);
                 var str = src.toLowerCase()
                 if(str.includes(list[site]))
                 {
-                    var link =get_link(images[i].src,site);
+                    var link = get_link(images[i].src,site);
                     side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(src,link);
                 }
             }
@@ -166,7 +167,7 @@ function get_link(pre_link,val)
     if(val == 0)
         return function_meet(pre_link);
     if(val == 1)
-    return function_gmail(pre_link);
+        return function_gmail(pre_link);
     if(val == 2)
         return function_drive(pre_link);
     if(val == 3)
