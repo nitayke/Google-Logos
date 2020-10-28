@@ -1,35 +1,25 @@
-
-console.log("hey everybody!");
-
 myVar = setTimeout(f, 4500);
-
 
 function function_meet(pre_link)
 {
-    if(pre_link === "https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png")
-    {
+    if (pre_link === "https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png")
         return "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet_google.png";
-    }    
     
-    else if(pre_link === "https://www.gstatic.com/meet/google_meet_primary_horizontal_2020q4_logo_be3f8c43950bd1e313525ada2ce0df44.svg")
+    if (pre_link === "https://www.gstatic.com/meet/google_meet_primary_horizontal_2020q4_logo_be3f8c43950bd1e313525ada2ce0df44.svg")
         return "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet.png";
 
     let place = pre_link.search('dp');
-    let size = pre_link.substr(place-2,2); // find dp
-
+    let size = pre_link.substr(place - 2, 2);
     return "https://www.gstatic.com/images/branding/product/1x/meet_" + size + "dp.png"
 }
 
-function function_drive(pre_link) 
-{
-
+function function_drive(pre_link) {
     let place = pre_link.search('dp');
     let size = pre_link.substr(place - 2, 2);
     return "https://www.gstatic.com/images/branding/product/1x/drive_" + size + "dp.png";
 }
 
-function function_gmail(pre_link)
-{
+function function_gmail(pre_link){
     if ("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_r2.png" === pre_link)
         return "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/big_gmail.png";
     if ("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png" === pre_link)
@@ -95,19 +85,18 @@ function f()
         "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet.png"
     }
 
-
     let list =[ 
         "meet",
         "gmail",
         "drive",
         "calendar"]
 
-
     var tabs = document.getElementsByTagName('link');
     var images = document.getElementsByTagName('img');
-    var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),document.getElementsByClassName("Yb-Il-d-c-j"),document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
+    var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),
+        document.getElementsByClassName("Yb-Il-d-c-j"),
+        document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
 
-    
     for (var i = 0; i < tabs.length; i++) 
     {
         if(!tabs[i].href.includes("gstatic"))
@@ -125,7 +114,6 @@ function f()
     
     for (var i = 0; i < images.length; i++) 
     {
-        
         if(!images[i].src.includes("gstatic"))
             continue;
         
@@ -134,14 +122,12 @@ function f()
             var str = images[i].src.toLowerCase();
             if(str.includes(list[site]))
             {
-                console.log("found");
-                var link =get_link(images[i].src,site);
+                var link = get_link(images[i].src,site);
                 images[i].srcset = link.concat(" 2x, ", link, " 1x");
             }
         }
         
     }
-    console.log("third for")
     for (var l = 0; l < side_icons.length; l++)
     {
         for (var i = 0; i < side_icons[l].length; i++)
@@ -161,12 +147,9 @@ function f()
                     side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(src,link);
                 }
             }
-
         }
     }
-
 }
-
 
 function get_link(pre_link,val)
 {
