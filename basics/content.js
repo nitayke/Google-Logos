@@ -13,13 +13,13 @@ function function_meet(pre_link)
     return "https://www.gstatic.com/images/branding/product/1x/meet_" + size + "dp.png"
 }
 
-function function_drive1(pre_link) {
+function function_drive(pre_link) {
     let place = pre_link.search('dp');
     let size = pre_link.substr(place - 2, 2);
     return "https://www.gstatic.com/images/branding/product/1x/drive_" + size + "dp.png";
 }
 
-function function_gmail1(pre_link){
+function function_gmail(pre_link){
     if ("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_r2.png" === pre_link)
         return "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/big_gmail.png";
     if ("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png" === pre_link)
@@ -28,7 +28,7 @@ function function_gmail1(pre_link){
     let size = pre_link.substr(place - 2, 2);
     return "https://www.gstatic.com/images/branding/product/1x/gmail_" + size + "dp.png";
 };
-function function_calendar1(pre_link){};
+function function_calendar(pre_link){};
 
 function f()
 {
