@@ -29,6 +29,7 @@ function function_gmail1(pre_link){
     if ("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_r2.png" === pre_link)
         return "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/big_gmail.png";
     if ("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_1x_rtl_r2.png" === pre_link)
+        return "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/gmail_rtl.png";
     let place = pre_link.search('dp');
     let size = pre_link.substr(place - 2, 2);
     return "https://www.gstatic.com/images/branding/product/1x/gmail_" + size + "dp.png";
