@@ -152,12 +152,19 @@ function f()
 
 function get_link(pre_link,val)
 {
-    if(val == 0)
-        return function_meet(pre_link);
-    if(val == 1)
-        return function_gmail(pre_link);
-    if(val == 2)
-        return function_drive(pre_link);
-    if(val == 3)
-        return function_calendar(pre_link);
+    switch(val)
+    {
+        case 0:
+            return function_meet(pre_link);
+            break;
+        case 1:
+            return function_gmail(pre_link);
+            break;
+        case 2:
+            return function_drive(pre_link);
+            break;
+        case 3:
+            return function_calendar(pre_link);
+            break;
+    }
 }
