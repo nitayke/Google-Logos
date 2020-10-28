@@ -3,8 +3,35 @@ console.log("hey everybody!");
 
 myVar = setTimeout(f, 4500);
 
+
+function function_meet1(pre_link)
+{
+    if(pre_link === "https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png")
+    {
+        return "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet_google.png";
+    }    
+    
+    else if(pre_link === "https://www.gstatic.com/meet/google_meet_primary_horizontal_2020q4_logo_be3f8c43950bd1e313525ada2ce0df44.svg")
+        return "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet.png";
+
+    let place = pre_link.search('dp');
+    let size = pre_link.substr(place-2,2); // find dp
+
+    return "https://www.gstatic.com/images/branding/product/1x/meet_" + size + "dp.png"
+}
+/*
+function function_chrome1(pre_link){};
+function function_drive1(pre_link){};
+function function_gmail1(pre_link){};
+function function_calendar1(pre_link){};
+*/
 function f()
 {
+    function function_chrome(){};
+    function function_meet(){console.log("fuck my life");};
+    function function_drive(){};
+    function function_gmail(){};
+    function function_calendar(){};
     var date = new Date();
     var dict = {
         // big gmail
@@ -44,11 +71,37 @@ function f()
         "https://www.gstatic.com/meet/google_meet_primary_horizontal_2020q4_logo_be3f8c43950bd1e313525ada2ce0df44.svg":
         "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet.png"
     }
+
+
+    let new_dict2 = {
+        "meet" : function_meet,
+        "chrome" : function_chrome,
+        "drive" : function_drive,
+        "calendar" : function_calendar,
+        "gmail" :function_gmail
+    }
+
+
     var tabs = document.getElementsByTagName('link');
     var images = document.getElementsByTagName('img');
     var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),document.getElementsByClassName("Yb-Il-d-c-j"),document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
 
-
+    
+    for (var i = 0; i < tabs.length; i++) 
+    {
+        if(!tabs[i].href.includes("gstatic"))
+            continue;
+        
+        for(site in new_dict)
+        {
+            if(tabs[i].href.includes(site))
+            {
+                tabs[i].href = dict[site](tabs[i]);
+            }
+        }
+    }
+    
+    /*
     for (var i = 0; i < tabs.length; i++) 
     {
         if(tabs[i].href in dict)
@@ -89,4 +142,24 @@ function f()
 
         }
     }
+    */
+}
+
+
+
+
+function get_link(pre_link,val)
+{
+    "meet" : function_meet,
+        "chrome" : function_chrome,
+        "drive" : function_drive,
+        "calendar" : function_calendar,
+        "gmail" :function_gmail
+    if(val == 0)
+        return function "meet"
+        if(pre_link.includes("meet"))
+        return function_meet(pre_link);    if(pre_link.includes("meet"))
+        return function_meet(pre_link);    if(pre_link.includes("meet"))
+        return function_meet(pre_link);    if(pre_link.includes("meet"))
+        return function_meet(pre_link);
 }
