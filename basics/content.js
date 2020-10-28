@@ -92,7 +92,8 @@ function f()
         
         for(site in list)
         {
-            if(tabs[i].href.includes(list[site]))
+            var str = tabs[i].href.toLowerCase();
+            if(str.includes(list[site]))
             {
                 tabs[i].href = get_link(tabs[i].href,site);
             }
@@ -107,7 +108,8 @@ function f()
         
         for(site in list)
         {
-            if(images[i].src.includes(list[site]))
+            var str = images[i].src.toLowerCase();
+            if(str.includes(list[site]))
             {
                 console.log("found");
                 var link =get_link(images[i].src,site);
@@ -128,7 +130,8 @@ function f()
     
             for(site in list)
             {
-                if(src.includes(list[site]))
+                var str = src.toLowerCase()
+                if(str.includes(list[site]))
                 {
                     var link =get_link(images[i].src,site);
                     side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(src,link);
