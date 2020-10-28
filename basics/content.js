@@ -38,11 +38,6 @@ function function_calendar1(pre_link){};
 
 function f()
 {
-    function function_chrome(){};
-    function function_meet(){console.log("fuck my life");};
-    function function_drive(){};
-    function function_gmail(){};
-    function function_calendar(){};
     var date = new Date();
     var dict = {
         // big gmail
