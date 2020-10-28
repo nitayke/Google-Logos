@@ -4,7 +4,7 @@ console.log("hey everybody!");
 myVar = setTimeout(f, 4500);
 
 
-function function_meet1(pre_link)
+function function_meet(pre_link)
 {
     if(pre_link === "https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png")
     {
@@ -84,13 +84,11 @@ function f()
     }
 
 
-    let new_dict2 = {
-        "meet" : function_meet,
-        "chrome" : function_chrome,
-        "drive" : function_drive,
-        "calendar" : function_calendar,
-        "gmail" :function_gmail
-    }
+    let list =[ 
+        "meet",
+        "gmail",
+        "drive",
+        "calendar"]
 
 
     var tabs = document.getElementsByTagName('link');
@@ -103,76 +101,68 @@ function f()
         if(!tabs[i].href.includes("gstatic"))
             continue;
         
-        for(site in new_dict)
+        for(site in list)
         {
-            if(tabs[i].href.includes(site))
+            var str = tabs[i].href.toLowerCase();
+            if(str.includes(list[site]))
             {
-                tabs[i].href = dict[site](tabs[i]);
-            }
-        }
-    }
-    
-    /*
-    for (var i = 0; i < tabs.length; i++) 
-    {
-        for (j in dict)
-        {
-            if (tabs[i].href.includes(j)) 
-            {
-                tabs[i].href = dict[tabs[i].href];
+                tabs[i].href = get_link(tabs[i].href,site);
             }
         }
     }
     
     for (var i = 0; i < images.length; i++) 
     {
-        if(images[i].src in dict)
+        
+        if(!images[i].src.includes("gstatic"))
+            continue;
+        
+        for(site in list)
         {
-            console.log("found");
-            images[i].srcset = dict[images[i].src].concat(" 2x, ", dict[images[i].src], " 1x");
+            var str = images[i].src.toLowerCase();
+            if(str.includes(list[site]))
+            {
+                console.log("found");
+                var link =get_link(images[i].src,site);
+                images[i].srcset = link.concat(" 2x, ", link, " 1x");
+            }
         }
         
     }
-    for (var i = 0; i < images.length; i++) 
-    {
-        if(images[i].src in dict)
-        {
-            console.log("found");
-            images[i].srcset = dict[images[i].src].concat(" 2x, ", dict[images[i].src], " 1x");
-        }
-        
-    }
-    console.log("second for")
+    console.log("third for")
     for (var l = 0; l < side_icons.length; l++)
     {
         for (var i = 0; i < side_icons[l].length; i++)
         {
             var src = side_icons[l][i].style.backgroundImage.substring(5,side_icons[l][i].style.backgroundImage.length -2);
-            if(src in dict)
+           
+            if(src.includes("gstatic"))
+                continue;
+    
+            for(site in list)
             {
-                side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(src,dict[src]);
+                var str = src.toLowerCase()
+                if(str.includes(list[site]))
+                {
+                    var link =get_link(images[i].src,site);
+                    side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(src,link);
+                }
             }
 
         }
     }
-    */
+
 }
-
-
 
 
 function get_link(pre_link,val)
 {
-    "meet" : function_meet,
-        "chrome" : function_chrome,
-        "drive" : function_drive,
-        "calendar" : function_calendar,
-        "gmail" :function_gmail
     if(val == 0)
-        return function "meet"
-        if(pre_link.includes("meet"))
-        return function_meet(pre_link);    if(pre_link.includes("meet"))
-        return function_meet(pre_link);    if(pre_link.includes("meet"))
-        return function_meet(pre_link);    if(pre_link.includes("meet"))
         return function_meet(pre_link);
+    if(val == 1)
+    return function_gmail(pre_link);
+    if(val == 2)
+        return function_drive(pre_link);
+    if(val == 3)
+        return function_calendar(pre_link);
 }
