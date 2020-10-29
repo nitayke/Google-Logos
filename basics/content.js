@@ -1,4 +1,5 @@
-myVar = setTimeout(f, 4500);
+while(true)
+    myVar = setTimeout(f, 4500);
 
 function function_meet(pre_link)
 {
@@ -124,12 +125,12 @@ function f()
         for(index in wanted)
         {
             console.log(list_icons[element]);
-            if(index in list_icons[element].style.includes(wanted[index]))
+            /*if(index in list_icons[element].style.includes(wanted[index]))
             {
                 let a =  get_link("",index);
                 console.log(a);
-                list_icons[elements].style.backgroundImage = "url(\""+ a + "\");";
-                }
+                list_icons[elements].style.backgroundImage = "url(\""+ a + "\");";   
+            }*/
         }
     }
 
