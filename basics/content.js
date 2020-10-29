@@ -2,6 +2,11 @@ myVar = setTimeout(f, 4500);
 
 function function_meet(pre_link)
 {
+    if(!(pre_link.includes("dp")) && !(pre_link.includes("logo")) && !(pre_link.includes("icon")))
+    {
+        return pre_link;
+    }
+
     if (pre_link === "https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png")
         return "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/meet_google.png";
     
@@ -100,7 +105,7 @@ function f()
                 var str = src.toLowerCase()
                 if(str.includes(list[site]))
                 {
-                    var link = get_link(images[i].src,site);
+                    var link = get_link(src,site);
                     side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(src,link);
                 }
             }
@@ -110,12 +115,17 @@ function f()
 
 function get_link(pre_link,val)
 {
-    if(val == 0)
-        return function_meet(pre_link);
-    if(val == 1)
-        return function_gmail(pre_link);
-    if(val == 2)
-        return function_drive(pre_link);
-    if(val == 3)
-        return function_calendar(pre_link);
+    switch(parseInt(val))
+    {
+        case 0:
+            return function_meet(pre_link);
+        case 1:
+            return function_gmail(pre_link);
+        case 2:
+            return function_drive(pre_link);
+        case 3:
+            return function_calendar(pre_link);
+        default:
+            return pre_link;
+    }
 }
