@@ -2,7 +2,7 @@ myVar = setTimeout(f, 4500);
 
 function function_meet(pre_link)
 {
-    if(!(pre_link.includes("dp")) && !(pre_link.includes("logo")) && !(pre_link.includes("icon")))
+    if(!(pre_link.includes("dp")) && !(pre_link.includes("logo")) && !(pre_link.includes("icon")) && pre_link.length > 0)
     {
         return pre_link;
     }
@@ -62,6 +62,9 @@ function f()
         document.getElementsByClassName("Yb-Il-d-c-j"),
         document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
 
+    var list_icons = document.getElementsByClassName('.MrEfLc');
+
+    //for tab-icons
     for (var i = 0; i < tabs.length; i++) 
     {
         if(!tabs[i].href.includes("gstatic"))
@@ -76,7 +79,7 @@ function f()
             }
         }
     }
-    
+    //for normal--use
     for (var i = 0; i < images.length; i++) 
     {
         if(!images[i].src.includes("gstatic"))
@@ -92,6 +95,7 @@ function f()
             }
         }
     }
+    //for side-icons
     for (var l = 0; l < side_icons.length; l++)
     {
         for (var i = 0; i < side_icons[l].length; i++)
@@ -113,6 +117,24 @@ function f()
             }
         }
     }
+
+    console.log(list_icons);
+    //for list logos:
+    for(element in list_icons)
+    {
+        wanted = ["2001","1449","1380","2829"]
+        for(index in wanted)
+        {
+            console.log(list_icons[element]);
+            if(index in list_icons[element].style.includes(wanted[index]))
+            {
+                let a =  get_link("",index);
+                console.log(a);
+                list_icons[elements].style.backgroundImage = "url(\""+ a + "\");";
+                }
+        }
+    }
+
 }
 
 function get_link(pre_link,val)
