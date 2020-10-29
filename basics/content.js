@@ -49,18 +49,26 @@ function function_calendar(pre_link)
 
 function f()
 {
-    let list =[ 
-        "meet",
-        "gmail",
-        "drive",
-        "calendar"]
+    let list =["meet", "gmail", "drive", "calendar"];
+    let background_positions = {"-2829px": 3, "-1380px": 2, "-2001px": 0, "-1449px": 1};
 
     var tabs = document.getElementsByTagName('link');
     var images = document.getElementsByTagName('img');
+    var span = document.getElementsByTagName('span');
     var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),
         document.getElementsByClassName("Yb-Il-d-c-j"),
         document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
 
+    for (var i = 0; i < span.length; i++)
+    {
+        var pos = span[i].style.backgroundPositionY;
+        console.log(span[i].textContent);
+        if (!pos in background_positions)
+            continue;
+        console.log(pos, background_positions[pos]);
+        span[i].style.backgroundPositionY = get_link(background_positions[pos]);
+    }
+    
     var list_icons = document.getElementsByClassName('.MrEfLc');
 
     //for tab-icons
@@ -73,9 +81,7 @@ function f()
         {
             var str = tabs[i].href.toLowerCase();
             if(str.includes(list[site]))
-            {
                 tabs[i].href = get_link(tabs[i].href,site);
-            }
         }
     }
     //for normal--use
@@ -106,7 +112,6 @@ function f()
             
             for(site in list)
             {
-                console.log(list[site]);
                 var str = src.toLowerCase()
                 if(str.includes(list[site]))
                 {
