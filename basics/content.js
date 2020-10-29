@@ -48,8 +48,6 @@ function function_calendar(pre_link)
 
 function f()
 {
-
-    var date = new Date();
     let list =[ 
         "meet",
         "gmail",
