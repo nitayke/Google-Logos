@@ -1,11 +1,8 @@
-/*chrome.browserAction.onClicked.addListener(function(tab) {
-    console.log("Calling Content");
-    chrome.tabs.executeScript({
-      file: 'index.js'
-    });
-  });
-  */
- document.getElementById(".svg").addEventListener("click")
-  {      // Execute some script when the page is fully (DOM) ready
-      chrome.tabs.executeScript(script.js,);
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("click-this").addEventListener("click", handler);
+});
+
+// The handler also must go in a .js file
+function handler() {
+  chrome.tabs.executeScript();
+}
