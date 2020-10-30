@@ -7,5 +7,5 @@
   */
  document.getElementById(".svg").addEventListener("click")
   {      // Execute some script when the page is fully (DOM) ready
-      chrome.tabs.executeScript(script.js,);
-  }
+      chrome.tabs.executeScript(script.js,{code: "f();"});
+    }
