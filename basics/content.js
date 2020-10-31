@@ -2,10 +2,6 @@
 window.addEventListener('load', function () {
     f();
 });
-function handler()
-{
-    setTimeout(links, 4000);
-}
 
 function function_meet(pre_link)
 {
