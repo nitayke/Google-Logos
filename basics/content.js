@@ -59,12 +59,6 @@ function f()
     var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),
         document.getElementsByClassName("Yb-Il-d-c-j"),
         document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
-    var list_icons = document.getElementsByClassName('.MrEfLc');
-
-    
-    
-    
-    var list_icons = document.getElementsByClassName("MrEfLc");
 
     //for tab-icons
     for (var i = 0; i < tabs.length; i++) 
