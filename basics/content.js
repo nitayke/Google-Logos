@@ -4,47 +4,8 @@ window.addEventListener('load', function () {
 });
 function handler()
 {
-    setTimeout(links, 4050);
+    setTimeout(links, 4000);
 }
-
-// function span()
-// {   
-//     var span = document.getElementsByTagName('span');
-//     let background_positions = {"-2829px": 3, "-1380px": 2, "-2001px": 0, "-1449px": 1};
-//     for (var i = 0; i < span.length; i++)
-//     {
-//         var pos = span[i].style.backgroundPositionY;
-//         console.log(span[i].textContent);
-//         if (!(pos in background_positions))
-//             continue;
-//         console.log(pos, background_positions[pos]);
-//         span[i].style.backgroundPositionY = get_link(background_positions[pos]);
-//     }
-    
-// }
-
-// function links()
-// {
-//     console.log('hello');
-//     var list_icons = document.getElementsByClassName("MrEfLc");
-//     console.log(list_icons);
-//     for (var element = 0; element < list_icons.length; element++)
-//     {
-//         console.log("hihiih");
-//         wanted = ["2001","1449","1380","2829"];
-//         for(index in wanted)
-//         {
-//             console.log(list_icons[element]);
-
-//             if(list_icons[element].style.includes(wanted[index]))
-//             {
-//                 let a =  get_link("",index);
-//                 console.log(a);
-//                 list_icons[elements].style.backgroundImage = "url(\""+ a + "\");";   
-//             }
-//         }
-//     }
-// }
 
 function function_meet(pre_link)
 {
@@ -102,12 +63,6 @@ function f()
     var side_icons = [document.getElementsByClassName("aT5-aOt-I-JX-Jw"),
         document.getElementsByClassName("Yb-Il-d-c-j"),
         document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
-    var list_icons = document.getElementsByClassName('.MrEfLc');
-
-    
-    
-    
-    var list_icons = document.getElementsByClassName("MrEfLc");
 
     //for tab-icons
     for (var i = 0; i < tabs.length; i++) 
