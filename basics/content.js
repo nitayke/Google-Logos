@@ -68,7 +68,7 @@ function function_calendar(pre_link)
 {
     var date = new Date();
     //for side icons only :)
-    return "https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_" // + date.getDate() + "_v2.png";
+    return "https://raw.githubusercontent.com/sharp30/Google-Logos/main/images/calendar.png";
 };
 
 function f()
