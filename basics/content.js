@@ -2,7 +2,29 @@
 window.addEventListener('load', function () {
     f();
 });
+let list =["meet", "gmail", "drive", "calendar"];
 
+function a_clicked()
+{
+   let links = document.getElementsByTagName('a');
+    for(var i =0;i<links.length;i++)
+    {
+        if(links[i].class == undefined)
+            continue;
+
+        for(site in list)
+        {
+            console.log(links[i]);
+            var src = links[i].style.backgroundImage.substring(5,side_icons[l][i].style.backgroundImage.length -2);
+            if (src.includes("gstatic") && src.includes(list[site]))
+            {
+                var link = get_link(src,site);
+                side_icons[l][i].style.backgroundImage = side_icons[l][i].style.backgroundImage.replace(src,link);
+            }
+        }
+    }
+
+}
 function function_meet(pre_link)
 {
     if(!(pre_link.includes("dp")) && !(pre_link.includes("logo")) && !(pre_link.includes("icon")) && pre_link.length > 0)
@@ -46,13 +68,12 @@ function function_calendar(pre_link)
 {
     var date = new Date();
     //for side icons only :)
-    return "https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_" + date.getDate() + "_v2.png";
+    return "https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_" // + date.getDate() + "_v2.png";
 };
 
 function f()
 {
     
-    let list =["meet", "gmail", "drive", "calendar"];
 
     var tabs = document.getElementsByTagName('link');
     var images = document.getElementsByTagName('img');
@@ -60,7 +81,6 @@ function f()
         document.getElementsByClassName("Yb-Il-d-c-j"),
         document.getElementsByClassName("DWWcKd-OomVLb-LgbsSe-Bz112c-haAclf")];
 
-    //for tab-icons
     for (var i = 0; i < tabs.length; i++) 
     {
         if(!tabs[i].href.includes("gstatic"))
@@ -110,7 +130,12 @@ function f()
             }
         }
     }
-
+    var all_links = document.getElementsByTagName('a');
+    a_clicked();
+    for(i in all_links)
+    {
+    //    all_links[i].addEventListener('click',a_clicked);
+    }  
 }
 
 function get_link(pre_link,val)
