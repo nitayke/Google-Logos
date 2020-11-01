@@ -83,7 +83,7 @@ function f()
 
     for (var i = 0; i < tabs.length; i++) 
     {
-        if(!tabs[i].href.includes("gstatic"))
+        if(!tabs[i].href.includes("gstatic") && !(tabs[i].href.includes("google") && tabs[i].href.includes("images")))
             continue;
         
         for(site in list)
